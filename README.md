@@ -19,6 +19,14 @@ python3 -m http.server 8000
 
 Push to `main` — GitHub Actions deploys to Pages automatically.
 
+## Canonical Repository
+
+**Canonical repo:** `https://github.com/kevinmjones/archapps.git`  
+**Live site:** `https://kevinmjones.github.io/archapps/`  
+Pages source: branch `main`, path `/`.
+
+> Note: `priva-city2000` is an archived legacy fork and is **not** the deployment target. All work should target `archapps`.
+
 ## License
 
 MIT
