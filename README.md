@@ -9,8 +9,8 @@ Collection of single-purpose apps: Measuring App (AR), Unit Conversion, Level, T
 This is a static site deployed via GitHub Pages. No build step required.
 
 ```
-git clone https://github.com/kevinmjones/priva-city2000.git
-cd priva-city2000
+git clone https://github.com/kevinmjones/archapps.git
+cd archapps
 # Open index.html in your browser or serve locally:
 python3 -m http.server 8000
 ```
