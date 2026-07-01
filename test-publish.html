@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/archapps/">
+  <title>TrustX Labs Verification — Arch Apps</title>
+  <meta name="description" content="Verification page to confirm successful automated publishing and deployment pipeline for TrustX Labs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <style>
+    .verification-container {
+      max-width: 600px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .verification-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--teal-2) 100%);
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--teal-700);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(13, 148, 136, 0.2);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--teal);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(13, 148, 136, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+      }
+    }
+    .verification-details {
+      margin-top: 2rem;
+      text-align: left;
+      border-top: 1px solid var(--rule-soft);
+      padding-top: 1.5rem;
+    }
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .detail-label {
+      color: var(--fg-faint);
+    }
+    .detail-value {
+      font-weight: 500;
+      color: var(--fg);
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="./" class="brand">Arch Apps</a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <a href="./">Home</a>
+        <a href="gallery.html">Apps</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="pitch-deck.html">Pitch Deck</a>
+        <a href="about.html">About</a>
+        <a href="mission.html">Mission</a>
+        <a href="blog/">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="verification-container reveal">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Pipeline Verified</span>
+      </div>
+      <h1>TrustX Labs Test Page</h1>
+      <p>This page serves as visual confirmation that the <strong>trust-x-labs</strong> agent can successfully edit the codebase, commit changes, and publish updates to the live site environment.</p>
+      
+      <div class="verification-details">
+        <div class="detail-item">
+          <span class="detail-label">Agent Name</span>
+          <span class="detail-value">trust-x-labs</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Agent ID</span>
+          <span class="detail-value">88ac9a1d-81b4-46f6-9fc2-aa6809833321</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Build Ref</span>
+          <span class="detail-value">main</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Timestamp</span>
+          <span class="detail-value" id="build-time">2026-07-01 20:12 UTC</span>
+        </div>
+      </div>
+      
+      <div style="margin-top: 2rem;">
+        <a href="./" class="btn btn-primary">Return to Home &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <span class="footer-brand">Arch Apps</span>
+        <p>Simple, functional tools. No bloat.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="./">Home</a>
+        <a href="gallery.html">Apps</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="pitch-deck.html">Pitch Deck</a>
+        <a href="about.html">About</a>
+        <a href="mission.html">Mission</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="blog/">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://github.com/kevinmjones/archapps">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Arch Apps &middot; Built with purpose, not bloat</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
