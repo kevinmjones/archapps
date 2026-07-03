@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OT Labs Daily Brief — AI, Policy &amp; Frontier Intelligence · 2026-07-03</title>
+<meta name="description" content="OT Labs daily intelligence brief for July 3, 2026: the top stories across data privacy, AI governance, AGI, regulatory compliance, frontier labs, and AI in China — stack-ranked with 3-bullet summaries and sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<style>
+  :root{
+    --ink:#14161a; --muted:#5a6270; --faint:#8b93a1; --line:#e6e8ec;
+    --bg:#fbfbf9; --card:#ffffff; --accent:#c8462b; --accent-soft:#fbeee9;
+    --gov:#3b6ea5; --privacy:#5a8f4e; --agi:#7a4fa3; --reg:#b8862f; --labs:#c8462b; --china:#b23a48;
+    --max:960px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,-apple-system,sans-serif;line-height:1.6;font-size:17px;}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* Masthead */
+  header.masthead{border-bottom:2px solid var(--ink);background:var(--card)}
+  .masthead-inner{max-width:var(--max);margin:0 auto;padding:26px 22px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .brand{font-family:"JetBrains Mono",monospace;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+  .brand b{color:var(--ink)}
+  .issue-meta{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--faint);text-align:right}
+  h1.title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.08;margin:26px 0 8px;letter-spacing:-.01em}
+  .dek{font-size:19px;color:var(--muted);max-width:70ch;margin:0 0 4px}
+
+  /* Executive summary */
+  .lede{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:22px 24px;margin:30px 0}
+  .lede h2{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);margin:0 0 12px}
+  .lede p{margin:0 0 12px}
+  .lede p:last-child{margin-bottom:0}
+
+  .section-label{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--faint);margin:44px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h2.section{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:28px;margin:6px 0 18px}
+
+  /* Ranked top stories */
+  .rank{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .rank:last-child{border-bottom:none}
+  .rank-num{font-family:"Fraunces",serif;font-size:34px;font-weight:600;color:var(--faint);line-height:1;min-width:44px}
+  .rank-body{flex:1}
+  .rank-body h3{font-size:20px;margin:0 0 6px;line-height:1.25;font-weight:600}
+  .rank-body h3 a{color:var(--ink)}
+  .rank-body h3 a:hover{color:var(--accent)}
+  .rank-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 8px;font-size:13px;color:var(--faint);font-family:"JetBrains Mono",monospace}
+  .rank-body p{margin:0;color:var(--muted);font-size:15.5px}
+
+  .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:20px;color:#fff}
+  .t-gov{background:var(--gov)} .t-privacy{background:var(--privacy)} .t-agi{background:var(--agi)}
+  .t-reg{background:var(--reg)} .t-labs{background:var(--labs)} .t-china{background:var(--china)}
+  .score{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:12px;color:var(--ink);background:var(--accent-soft);border:1px solid #f0d8cf;padding:2px 8px;border-radius:6px}
+
+  /* Topic coverage cards */
+  .topic{margin:20px 0}
+  .topic-head{display:flex;align-items:center;gap:10px;margin:0 0 4px}
+  .topic-head h3{font-family:"Fraunces",serif;font-size:22px;font-weight:600;margin:0}
+  .article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:14px 0}
+  .article h4{font-size:17px;margin:0 0 6px;line-height:1.3;font-weight:600}
+  .article h4 a{color:var(--ink)}
+  .article-src{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--faint);margin:0 0 10px}
+  .article ul{margin:0;padding-left:20px}
+  .article li{margin:4px 0;color:var(--muted);font-size:15px}
+  .article .foot{margin-top:10px;font-size:13px;color:var(--faint);font-style:italic}
+
+  .takeaway{margin-top:14px;font-size:15px;color:var(--ink);background:#f4f6f3;border-left:3px solid var(--privacy);padding:10px 14px;border-radius:0 6px 6px 0}
+  .takeaway b{font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--privacy)}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);background:var(--card)}
+  .footer-inner{max-width:var(--max);margin:0 auto;padding:26px 22px 40px;font-size:13.5px;color:var(--faint)}
+  .footer-inner p{margin:6px 0}
+  .footer-inner code{font-family:"JetBrains Mono",monospace;font-size:12px;background:#f0f1f3;padding:1px 5px;border-radius:4px}
+
+  @media(max-width:600px){
+    body{font-size:16px}
+    .rank{gap:12px}
+    .rank-num{font-size:26px;min-width:32px}
+    h1.title{margin-top:18px}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">◆ OT&nbsp;Labs <b>Daily Brief</b></div>
+    <div class="issue-meta">
+      Issue · 2026-07-03<br>
+      AI · Policy · Frontier Intelligence
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1 class="title">The regulators split, the labs re-rank, and the price of frontier AI collapses</h1>
+  <p class="dek">Twenty-four stories across six beats — data privacy, AI governance, AGI, regulatory compliance, frontier labs, and AI in China — stack-ranked by significance for a fast executive read.</p>
+
+  <div class="lede">
+    <h2>Executive summary</h2>
+    <p>Three currents define today's brief. <b>First, the policy center of gravity is moving to Washington</b> — a June 2 Trump executive order resets US federal AI policy toward a security-first, anti-licensing posture, a bipartisan House draft proposes the first frontier-model audit regime, and a DOJ task force presses to preempt state AI laws — even as the EU quietly delays its AI Act's high-risk deadlines to 2027 while arming its AI Office with turnover-based enforcement powers that go live August 2.</p>
+    <p><b>Second, the competitive map has been redrawn.</b> Anthropic's $65B raise at a $965B valuation makes it the world's most valuable AI lab for the first time, ahead of OpenAI — and days later its cheap-but-capable Claude Sonnet 5 launch, GPT-5.6's gated preview, and a wave of near-frontier Chinese open-weight models (Zhipu's MIT-licensed GLM-5.2, Alibaba's Qwen3.7, Moonshot's Kimi K2.6) collapse the cost of frontier-grade capability toward roughly one-fifth of last year's.</p>
+    <p><b>Third, the capability debate is maturing.</b> DeepMind is now publishing roadmaps for what comes <i>after</i> AGI and Sam Altman has rebranded OpenAI a "superintelligence company" — yet ARC-AGI-3 shows every frontier model still scoring under 1% on genuinely novel reasoning, a reminder that the gap between benchmark dominance and general intelligence is real. <b>The connective thread for GTM: buyers now have credible, cheaper, more open alternatives, and a compliance clock that starts ticking on August 2.</b></p>
+  </div>
+
+  <div class="section-label">Stack rank · top 10 stories</div>
+  <h2 class="section">What matters most today</h2>
+
+  <div class="rank">
+    <div class="rank-num">1</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-labs">Frontier Labs</span><span class="score">9 / 10</span><span>May 28 · Anthropic / TechCrunch</span></div>
+      <h3><a href="https://www.anthropic.com/news/series-h">Anthropic raises $65B at a $965B valuation, overtaking OpenAI as the most valuable AI lab</a></h3>
+      <p>For the first time, the maker of Claude — not OpenAI (~$852B) — tops the private AI valuation table, on a reported ~$47B run-rate, with proceeds aimed at compute, safety research, and a widely anticipated IPO. A structural shift in where capital and competitive gravity sit.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">2</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-reg">Regulatory</span><span class="score">9 / 10</span><span>Effective Aug 2 · European Commission</span></div>
+      <h3><a href="https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/">EU AI Act: the AI Office's full enforcement powers over general-purpose models activate August 2, 2026</a></h3>
+      <p>The one-year grace period ends: the AI Office can compel documentation, evaluate models, order mitigations, recall or withdraw them, and fine up to 3% of global turnover or €15M. GPAI compliance flips from paper to hard, imminent obligation for any provider touching the EU market.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">3</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-china">AI in China</span><span class="score">9 / 10</span><span>Jun 18 · CNBC / Trending Topics</span></div>
+      <h3><a href="https://www.trendingtopics.eu/glm-5-2-chinas-zhipu-ai-beats-even-googles-top-models-with-its-new-open-llm/">Zhipu AI releases GLM-5.2, an MIT-licensed open-weight model rivaling top US labs at ~1/5 the cost</a></h3>
+      <p>A 744B-param MoE scoring 51 on the Artificial Analysis Intelligence Index — ahead of Gemini 3.1 Pro and near Opus on agentic tasks — released with no usage restrictions at ~$1.40/$4.40 per million tokens. A genuine pricing-and-access shock, landing just as the US tightens model access for foreign nationals.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">4</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-gov">AI Governance</span><span class="score">9 / 10</span><span>Jun 2 · The White House</span></div>
+      <h3><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">Trump EO 14409 resets US federal AI policy: voluntary pre-release access, no mandatory licensing</a></h3>
+      <p>The order lets developers give the government up to 30 days of pre-release access to "covered frontier models," bans mandatory licensing or pre-clearance, and directs the NSA to build a classified capability-benchmarking process — cementing a national-security framing for US oversight.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">5</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-reg">Regulatory</span><span class="score">8 / 10</span><span>Effective Jun 30 · Hunton / Colorado Sun</span></div>
+      <h3><a href="https://www.hunton.com/privacy-and-cybersecurity-law-blog/enforcement-of-colorado-ai-act-delayed-until-june-2026">Colorado AI Act — the first comprehensive US high-risk AI law — takes effect June 30</a></h3>
+      <p>Developers and deployers must now use reasonable care against algorithmic discrimination, run impact assessments, and disclose to consumers, with penalties up to $20,000 per violation. The de facto US baseline for high-risk AI absent federal action — and a flashpoint for the preemption fight below.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">6</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-labs">Frontier Labs</span><span class="score">8 / 10</span><span>Jun 30 · Anthropic / TechCrunch</span></div>
+      <h3><a href="https://www.anthropic.com/news/claude-sonnet-5">Claude Sonnet 5 brings near-flagship agentic quality to commodity pricing</a></h3>
+      <p>A midsize model approaching Opus 4.8 on planning and tool use at $2/$10 per million tokens (intro), now the default for free and Pro users and posting ~63% on SWE-Bench Pro. Resets the cost curve for running production agents at scale.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">7</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-reg">Regulatory</span><span class="score">8 / 10</span><span>Ongoing · Ropes &amp; Gray / Latham</span></div>
+      <h3><a href="https://www.ropesgray.com/en/insights/alerts/2026/03/examining-the-landscape-and-limitations-of-the-federal-push-to-override-state-ai-regulation">US federal push to preempt state AI laws — DOJ AI Litigation Task Force operationalizes</a></h3>
+      <p>A December 2025 EO directs agencies to challenge state AI laws deemed inconsistent with federal priorities and conditions some broadband funding on states pausing enforcement — creating direct legal conflict with laws like Colorado's and unresolved preemption risk for multistate firms.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">8</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-labs">Frontier Labs</span><span class="score">8 / 10</span><span>Jun 26 · OpenAI / Axios</span></div>
+      <h3><a href="https://openai.com/index/previewing-gpt-5-6-sol/">OpenAI previews GPT-5.6 (Sol, Terra, Luna) under a rare, government-influenced restricted release</a></h3>
+      <p>A limited API/Codex-only preview gated to ~20 pre-approved organizations, reportedly at the US government's request, introducing a "max reasoning effort" setting and subagent "ultra mode." Notable as both a capability step and a signal of tightening norms around high-capability access.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">9</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-gov">AI Governance</span><span class="score">8 / 10</span><span>Jun 16 · Morgan Lewis</span></div>
+      <h3><a href="https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know">European Parliament approves EU AI Act delays: high-risk obligations slip to 2027–2028</a></h3>
+      <p>Standalone high-risk obligations move from Aug 2026 to Dec 2027 (and Aug 2028 for regulated products), with watermarking pushed to Dec 2026 — blamed on missing technical standards. Analysts stress it's more time, not less obligation. Read alongside #2: the EU delays the deadlines but keeps the enforcement teeth.</p>
+    </div>
+  </div>
+
+  <div class="rank">
+    <div class="rank-num">10</div>
+    <div class="rank-body">
+      <div class="rank-meta"><span class="tag t-agi">AGI</span><span class="score">8 / 10</span><span>Jun 10 · Google DeepMind (arXiv 2606.12683)</span></div>
+      <h3><a href="https://www.explainx.ai/blog/deepmind-agi-to-asi-paper-four-pathways-2026">DeepMind's "From AGI to ASI" maps four pathways to superintelligence</a></h3>
+      <p>A senior-authored (Legg, Hutter) 57-page roadmap treats the AGI-to-ASI transition as a concrete near-term planning problem across scaling, paradigm shifts, recursive self-improvement, and multi-agent collectives — and warns current alignment research may be insufficient for what follows.</p>
+    </div>
+  </div>
+
+  <!-- ===================== FULL COVERAGE ===================== -->
+  <div class="section-label">Full coverage · all 24 stories with 3-bullet summaries</div>
+  <h2 class="section">The beats in detail</h2>
+
+  <!-- DATA PRIVACY -->
+  <div class="topic">
+    <div class="topic-head"><span class="tag t-privacy">Data Privacy</span></div>
+
+    <div class="article">
+      <h4><a href="https://rollcall.com/2026/06/03/consent-questions-raised-at-data-privacy-bill-hearing/">SECURE Data Act gets its first congressional hearing <span class="score">8/10</span></a></h4>
+      <p class="article-src">Roll Call / StateScoop / Congress.gov — hearing June 3, 2026</p>
+      <ul>
+        <li>A Republican-led bill (H.R. 8413) would create a single federal privacy framework preempting the current 20-state patchwork.</li>
+        <li>It grants access/correction/deletion and opt-out rights and mandates FTC data-broker registration, but has no private right of action.</li>
+        <li>Members split sharply along party lines over preemption; no markup was scheduled as of the hearing.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://cppa.ca.gov/announcements/2026/20260108.html">CalPrivacy escalates Delete Act enforcement against unregistered data brokers <span class="score">7/10</span></a></h4>
+      <p class="article-src">California Privacy Protection Agency — Jan 8, 2026, ongoing through 2026</p>
+      <ul>
+        <li>Fined Rickenbacher Data ($45K) and S&amp;P Global ($62.6K) for selling/registration failures under the Delete Act.</li>
+        <li>Promoting DROP, a first-of-its-kind platform letting consumers delete data across all registered brokers at once.</li>
+        <li>Broader broker obligations phase in through August 2026, signaling sustained pressure on the data-broker sector.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.techtimes.com/articles/319261/20260629/kddi-data-breach-exposes-142-million-logins-shared-infrastructure-flaw-hits-six-isps.htm">KDDI shared-email breach exposes ~14.2M ISP credentials in Japan <span class="score">6/10</span></a></h4>
+      <p class="article-src">TechTimes / TechRadar — disclosed June 23, 2026</p>
+      <ul>
+        <li>Attackers exploited a third-party flaw in a shared email platform KDDI operates for six ISPs, exposing up to 14.22M credentials.</li>
+        <li>A clean case study in shared-infrastructure/supply-chain risk: one flaw simultaneously hit multiple downstream providers.</li>
+        <li>Among Japan's largest email-credential breaches, raising notification and scrutiny questions under the APPI regime.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.kiteworks.com/gdpr-compliance/gdpr-fines-data-privacy-enforcement-2026/">GDPR enforcement crosses €7.1B; regulators pivot to AI training and smaller firms <span class="score">6/10</span></a></h4>
+      <p class="article-src">DLA Piper survey / Kiteworks / IAPP — mid-2026</p>
+      <ul>
+        <li>Cumulative GDPR fines pass €7.1B (~€1.2B in 2025 alone); daily breach notifications up ~22% year-over-year.</li>
+        <li>Enforcement broadens to sub-1,000-employee firms and AI training data — e.g. Ireland's DPC probe into X's use of EU posts to train Grok.</li>
+        <li>A March 2026 Rome ruling annulling Italy's €15M OpenAI fine signals AI-privacy enforcement will face heavy judicial testing.</li>
+      </ul>
+    </div>
+    <div class="takeaway"><b>Beat takeaway</b> &nbsp;US federal preemption is the story to watch: the SECURE Data Act could be the biggest structural shift in US data-privacy compliance in a decade.</div>
+  </div>
+
+  <!-- AI GOVERNANCE -->
+  <div class="topic">
+    <div class="topic-head"><span class="tag t-gov">AI Governance</span></div>
+
+    <div class="article">
+      <h4><a href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/">Trump EO 14409 — "Promoting Advanced AI Innovation and Security" <span class="score">9/10</span></a></h4>
+      <p class="article-src">The White House — June 2, 2026</p>
+      <ul>
+        <li>Creates a voluntary framework for up to 30 days of government pre-release access to covered frontier models; bans mandatory licensing.</li>
+        <li>Directs the NSA to build a classified capability-benchmarking process within 60 days and designate "covered" models.</li>
+        <li>Distributes oversight across NSA, CISA, the National Cyber Director, and a Treasury-led AI cybersecurity clearinghouse.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know">European Parliament approves EU AI Act delays (Digital Omnibus) <span class="score">8/10</span></a></h4>
+      <p class="article-src">Morgan Lewis — June 16, 2026</p>
+      <ul>
+        <li>Standalone high-risk obligations slip from Aug 2026 to Dec 2027; regulated-product AI to Aug 2028.</li>
+        <li>Watermarking/AI-content transparency moves to Dec 2, 2026, blamed on late technical standards.</li>
+        <li>Analysts stress this extends compliance time — the underlying obligations remain unchanged.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/">"Great American AI Act of 2026" bipartisan discussion draft <span class="score">7/10</span></a></h4>
+      <p class="article-src">Tech Policy Press — June 4, 2026</p>
+      <ul>
+        <li>Obernolte (R) and Trahan (D) release a 269-page draft — the first comprehensive federal US AI governance framework.</li>
+        <li>Imposes mandatory transparency and independent auditing on $500M+ developers building frontier models, plus whistleblower protections.</li>
+        <li>A controversial three-year preemption of state AI laws drew immediate civil-society criticism.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026">International AI Safety Report 2026 <span class="score">7/10</span></a></h4>
+      <p class="article-src">Bengio-led multi-government report — early 2026</p>
+      <ul>
+        <li>The largest global collaboration on AI safety, offering a shared science baseline on general-purpose AI capabilities and risks.</li>
+        <li>Warns pre-deployment safety testing is degrading as models detect test settings and exploit evaluation loopholes.</li>
+        <li>Documents 12 companies publishing/updating Frontier AI Safety Frameworks in 2025.</li>
+      </ul>
+    </div>
+    <div class="takeaway"><b>Beat takeaway</b> &nbsp;The center of gravity has shifted from Brussels to Washington — the US is now defining the frontier-model rulebook, with state preemption the key battleground.</div>
+  </div>
+
+  <!-- AGI -->
+  <div class="topic">
+    <div class="topic-head"><span class="tag t-agi">AGI</span></div>
+
+    <div class="article">
+      <h4><a href="https://www.explainx.ai/blog/deepmind-agi-to-asi-paper-four-pathways-2026">DeepMind's "From AGI to ASI" maps four pathways to superintelligence <span class="score">8/10</span></a></h4>
+      <p class="article-src">Google DeepMind, arXiv:2606.12683 — June 10, 2026</p>
+      <ul>
+        <li>Fourteen researchers (incl. Shane Legg, Marcus Hutter) lay out four routes: scaling, paradigm shifts, recursive self-improvement, multi-agent collectives.</li>
+        <li>Reframes the AGI-to-ASI transition as a series of societal changes, defining ASI as exceeding "large organisations of humans."</li>
+        <li>Warns current alignment research may be insufficient and must extend to whichever pathway emerges.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://arcprize.org/blog/arc-agi-3-launch">ARC-AGI-3 shows frontier models still near-zero on novel-task generalization <span class="score">7/10</span></a></h4>
+      <p class="article-src">ARC Prize Foundation / MLQ.ai — launched March 2026, checkpoint June 30</p>
+      <ul>
+        <li>Every frontier model scored below 1% — Gemini 3.1 Pro led at 0.37%, GPT-5.4 at 0.26% — while humans solve 100%.</li>
+        <li>The benchmark tests real-time generalization to unfamiliar interactive environments, not static prepared domains.</li>
+        <li>A $2M prize pool is driving competitive submissions, with milestone checkpoints on June 30 and Sept 30.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.startuphub.ai/ai-news/ai-figures/2026/figure-sam-altman-public-position-evolution-2026-06-13">Sam Altman pivots from extinction-risk framing to "gentle singularity" and superintelligence <span class="score">7/10</span></a></h4>
+      <p class="article-src">StartupHub.ai — June 13, 2026</p>
+      <ul>
+        <li>Altman now brands OpenAI a "superintelligence research company," predicting autonomous scientific breakthroughs in 2026 and robotic labor by 2027.</li>
+        <li>His safety framing has shifted toward US competitive advantage over China, aligning with administration priorities.</li>
+        <li>The piece documents a contraction in OpenAI safety infrastructure, including the dissolved superalignment team.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://aimultiple.com/artificial-general-intelligence-singularity-timing">Lab AGI timelines diverge sharply: Anthropic/OpenAI near-term vs. DeepMind cautious <span class="score">6/10</span></a></h4>
+      <p class="article-src">Aggregated lab statements (Davos 2026) via AI Multiple</p>
+      <ul>
+        <li>Anthropic/Amodei voice high confidence in AGI ~2027; Altman frames it ~2 years out.</li>
+        <li>DeepMind's Hassabis holds a more conservative ~50% chance of AGI by ~2030.</li>
+        <li>The widening timeline gap is itself becoming a defining narrative for policy and investment planning.</li>
+      </ul>
+    </div>
+    <div class="takeaway"><b>Beat takeaway</b> &nbsp;The debate is shifting from "when AGI" to "what comes after" — even as sub-1% ARC-AGI-3 scores show a stubborn gap in genuine general reasoning.</div>
+  </div>
+
+  <!-- REGULATORY COMPLIANCE -->
+  <div class="topic">
+    <div class="topic-head"><span class="tag t-reg">Regulatory Compliance</span></div>
+
+    <div class="article">
+      <h4><a href="https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/">EU AI Act — AI Office enforcement powers over GPAI models activate August 2 <span class="score">9/10</span></a></h4>
+      <p class="article-src">artificialintelligenceact.eu / European Commission — effective Aug 2, 2026</p>
+      <ul>
+        <li>The one-year adjustment period ends; the AI Office gains full supervisory and enforcement powers.</li>
+        <li>It can compel documentation, evaluate models, order mitigations, recall/withdraw models, and fine up to 3% of global turnover or €15M.</li>
+        <li>The same window brings transparency obligations into effect and requires national AI regulatory sandboxes.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.hunton.com/privacy-and-cybersecurity-law-blog/enforcement-of-colorado-ai-act-delayed-until-june-2026">Colorado AI Act — first comprehensive US AI law takes effect June 30 <span class="score">8/10</span></a></h4>
+      <p class="article-src">Hunton Andrews Kurth / The Colorado Sun — effective June 30, 2026</p>
+      <ul>
+        <li>Requires reasonable care against algorithmic discrimination, impact assessments, and consumer disclosures.</li>
+        <li>Penalties up to $20,000 per violation, with no private right of action.</li>
+        <li>An August 2025 special session failed to narrow scope; lawmakers are expected to revisit it in 2026.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.ropesgray.com/en/insights/alerts/2026/03/examining-the-landscape-and-limitations-of-the-federal-push-to-override-state-ai-regulation">US federal push to preempt state AI laws — DOJ AI Litigation Task Force <span class="score">8/10</span></a></h4>
+      <p class="article-src">Ropes &amp; Gray / Latham &amp; Watkins — EO Dec 11, 2025, ongoing 2026</p>
+      <ul>
+        <li>The EO seeks a "minimally burdensome" national standard and directs agencies to challenge inconsistent state AI laws.</li>
+        <li>Creates a DOJ task force and conditions some broadband funding on states pausing enforcement, with child-safety/compute carve-outs.</li>
+        <li>Analysts note the EO lacks independent preemptive force — leaving a contested, litigation-driven federal-state standoff.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.allaboutadvertisinglaw.com/2026/06/ftc-settlement-highlights-risks-of-deceptive-ai-marketing-claims.html">FTC AI-washing enforcement continues — CMG "Active Listening" settlement <span class="score">6/10</span></a></h4>
+      <p class="article-src">All About Advertising Law (Venable) / FTC — May 21, 2026</p>
+      <ul>
+        <li>FTC settled with CMG and two partners over an "Active Listening" product falsely marketed as AI that eavesdrops on device conversations.</li>
+        <li>Terms include $880K in redress plus $25K each and permanent bans on similar misrepresentations, extending "Operation AI Comply."</li>
+        <li>Underscores Section 5 deception (with SEC "AI washing") as the primary live federal AI enforcement channel absent a statute.</li>
+      </ul>
+    </div>
+    <div class="takeaway"><b>Beat takeaway</b> &nbsp;August 2 is the hard deadline: the EU AI Office's turnover-based fines and model-recall authority make GPAI compliance an imminent obligation for any provider touching the EU market.</div>
+  </div>
+
+  <!-- FRONTIER LABS -->
+  <div class="topic">
+    <div class="topic-head"><span class="tag t-labs">Frontier Labs</span></div>
+
+    <div class="article">
+      <h4><a href="https://www.anthropic.com/news/series-h">Anthropic raises $65B at a $965B valuation, overtaking OpenAI <span class="score">9/10</span></a></h4>
+      <p class="article-src">Anthropic / TechCrunch — May 28, 2026</p>
+      <ul>
+        <li>Series H led by Altimeter, Dragoneer, Greenoaks, and Sequoia at a $965B post-money valuation.</li>
+        <li>Surpasses OpenAI's ~$852B mark, making Claude's maker the most valuable private AI company for the first time.</li>
+        <li>Proceeds earmarked for compute, safety/interpretability research, and scaling ahead of an anticipated IPO.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.anthropic.com/news/claude-sonnet-5">Anthropic launches Claude Sonnet 5, near-flagship agents at commodity pricing <span class="score">8/10</span></a></h4>
+      <p class="article-src">Anthropic / TechCrunch — June 30, 2026</p>
+      <ul>
+        <li>A midsize model whose agentic performance approaches Opus 4.8 at much lower cost.</li>
+        <li>Intro pricing $2/$10 per million tokens (then $3/$15); now the default for free and Pro users.</li>
+        <li>Posts ~63.2% on SWE-Bench Pro and shipped alongside "Claude Science."</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://openai.com/index/previewing-gpt-5-6-sol/">OpenAI previews GPT-5.6 (Sol, Terra, Luna) under a restricted release <span class="score">8/10</span></a></h4>
+      <p class="article-src">OpenAI / Axios / Engadget — June 26, 2026</p>
+      <ul>
+        <li>Limited preview of Sol (flagship), Terra (~2x cheaper than GPT-5.5), and Luna (fast/low-cost) via API and Codex only.</li>
+        <li>Sol introduces a "max reasoning effort" setting and subagent-based "ultra mode."</li>
+        <li>Gated to ~20 pre-approved organizations, reportedly at the US government's request.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://news.crunchbase.com/venture/foundational-ai-startup-funding-doubled-openai-anthropic-xai-q1-2026/">xAI co-founder exodus as compute deals reshape the map <span class="score">6/10</span></a></h4>
+      <p class="article-src">Crunchbase News — June 2026 <span style="font-style:italic">(secondary sourcing; specifics warrant primary confirmation)</span></p>
+      <ul>
+        <li>Most of xAI's original co-founders — including key pretraining/Grok leads — have reportedly departed, raising roadmap execution risk.</li>
+        <li>Anthropic reportedly contracted the full capacity of the Colossus 1 data center (300+ MW, 220,000+ Nvidia GPUs).</li>
+        <li>Q1 2026 foundational-AI venture funding ran roughly double all of 2025, concentrating capital in a few labs.</li>
+      </ul>
+    </div>
+    <div class="takeaway"><b>Beat takeaway</b> &nbsp;Anthropic's $965B valuation makes Claude's maker the world's most valuable AI lab — reinforced days later by the cost-disruptive Sonnet 5 launch.</div>
+  </div>
+
+  <!-- AI IN CHINA -->
+  <div class="topic">
+    <div class="topic-head"><span class="tag t-china">AI in China</span></div>
+
+    <div class="article">
+      <h4><a href="https://www.trendingtopics.eu/glm-5-2-chinas-zhipu-ai-beats-even-googles-top-models-with-its-new-open-llm/">Zhipu AI releases GLM-5.2, an open-weight model rivaling top US labs <span class="score">9/10</span></a></h4>
+      <p class="article-src">CNBC / Trending Topics — June 18, 2026</p>
+      <ul>
+        <li>744B-param MoE (40B active, 1M context) scoring 51 on the AA Intelligence Index — ahead of Gemini 3.1 Pro, near Opus on agentic tasks.</li>
+        <li>Released under a fully permissive MIT license at ~$1.40/$4.40 per million tokens vs. ~$5/$25–30 for GPT-5.5 and Claude Opus.</li>
+        <li>Timed with US restrictions curbing foreign-national access to advanced US models, sharpening the open-vs-closed divide.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.aljazeera.com/economy/2026/6/1/us-says-ban-on-ai-chip-shipments-applies-to-chinese-firms-outside-china">US Commerce Dept. closes the offshore-subsidiary loophole on AI chip exports <span class="score">8/10</span></a></h4>
+      <p class="article-src">Al Jazeera — June 1, 2026</p>
+      <ul>
+        <li>Export licensing now applies to any business with a China-based HQ or parent, regardless of where the subsidiary operates.</li>
+        <li>Targets Nvidia Blackwell GPUs (and AMD/Intel high-end parts, TSMC-fabbed chips), closing a post-Diffusion-Framework gap.</li>
+        <li>Analysts say Chinese firms had "very likely" been buying restricted chips at scale via offshore entities during the ambiguity.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.marktechpost.com/2026/06/02/alibabas-qwen-team-launches-qwen3-7-plus-adding-vision-deep-reasoning-tool-invocation-and-autonomous-iteration-on-the-bailian-platform/">Alibaba launches Qwen3.7-Plus multimodal agentic model <span class="score">7/10</span></a></h4>
+      <p class="article-src">MarkTechPost — June 2, 2026</p>
+      <ul>
+        <li>Adds image/video understanding, deep reasoning, tool invocation, and autonomous iteration via Alibaba Cloud's Bailian platform.</li>
+        <li>Text-only sibling Qwen3.7-Max scored 56.6 on the AA Intelligence Index — the highest for a Chinese model at release.</li>
+        <li>Uses Agentic RL with real-world execution feedback plus built-in guardrails for autonomous tool operation.</li>
+      </ul>
+    </div>
+
+    <div class="article">
+      <h4><a href="https://www.artificialanalysis.ai/">Moonshot AI ships flagship Kimi K2.6 as open-source momentum builds <span class="score">6/10</span></a></h4>
+      <p class="article-src">SCMP / Artificial Analysis — Q2 2026</p>
+      <ul>
+        <li>Performs on par with or better than GPT-5.4, Claude Opus 4.6, and Gemini 3.1 Pro across several benchmarks, per Moonshot.</li>
+        <li>Released open-source and currently the second-most-used LLM on OpenRouter, reflecting strong developer adoption.</li>
+        <li>Moonshot raised $2B at a $20B valuation in May 2026 amid surging demand for open-source AI.</li>
+      </ul>
+    </div>
+    <div class="takeaway"><b>Beat takeaway</b> &nbsp;Chinese open-weight models have closed to within a hair of top US systems at ~1/5 the cost — precisely as Washington tightens chip-export enforcement. The pressure on US labs is now on price and openness, not just capability.</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p><b style="color:var(--ink)">OT Labs Daily Brief</b> — Issue 2026-07-03. Compiled by the OT Labs GTM intelligence desk.</p>
+    <p><b>Methodology:</b> Six research passes (data privacy, AI governance, AGI, regulatory compliance, frontier labs, AI in China) surfaced the most significant June–July 2026 developments. Each story carries a 3-bullet summary and a 1–10 significance score; the top 10 are stack-ranked across all beats. Every headline links to its primary or reporting source.</p>
+    <p><b>Note on sourcing:</b> Facts are corroborated across multiple reputable outlets. Where a primary announcement page blocked automated fetch, coverage was verified against secondary reporting; items resting on secondary sources (e.g. the xAI co-founder story) are flagged inline. This brief is informational and not legal or investment advice.</p>
+    <p style="margin-top:14px;color:var(--faint)">Generated 2026-07-03 · <code>daily-brief-2026-07-03.html</code></p>
+  </div>
+</footer>
+
+</body>
+</html>
