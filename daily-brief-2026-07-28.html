@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OT Labs Daily Brief — AI, Policy &amp; Frontier Intelligence · 2026-07-28</title>
+<meta name="description" content="OT Labs daily intelligence brief for July 28, 2026: the top stories across data privacy, AI governance, AGI, regulatory compliance, frontier labs, and AI in China — stack-ranked with 3-bullet summaries and sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<style>
+  :root{
+    --ink:#14161a; --muted:#5a6270; --faint:#8b93a1; --line:#e6e8ec;
+    --bg:#fbfbf9; --card:#ffffff; --accent:#c8462b; --accent-soft:#fbeee9;
+    --gov:#3b6ea5; --privacy:#5a8f4e; --agi:#7a4fa3; --reg:#b8862f; --labs:#c8462b; --china:#b23a48;
+    --max:960px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,-apple-system,sans-serif;line-height:1.6;font-size:17px;}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* Masthead */
+  header.masthead{border-bottom:2px solid var(--ink);background:var(--card)}
+  .masthead-inner{max-width:var(--max);margin:0 auto;padding:26px 22px 20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+  .brand{font-family:"JetBrains Mono",monospace;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+  .brand b{color:var(--ink)}
+  .issue-meta{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--faint);text-align:right}
+  h1.title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.08;margin:26px 0 8px;letter-spacing:-.01em}
+  .dek{font-size:19px;color:var(--muted);max-width:70ch;margin:0 0 4px}
+
+  /* Executive summary */
+  .lede{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:22px 24px;margin:30px 0}
+  .lede h2{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);margin:0 0 12px}
+  .lede p{margin:0 0 12px}
+  .lede p:last-child{margin-bottom:0}
+
+  .section-label{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--faint);margin:44px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h2.section{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:28px;margin:6px 0 18px}
+
+  /* Ranked top stories */
+  .rank{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .rank:last-child{border-bottom:none}
+  .rank-num{font-family:"Fraunces",serif;font-size:34px;font-weight:600;color:var(--faint);line-height:1;min-width:44px}
+  .rank-body{flex:1}
+  .rank-body h3{font-size:20px;margin:0 0 6px;line-height:1.25;font-weight:600}
+  .rank-body h3 a{color:var(--ink)}
+  .rank-body h3 a:hover{color:var(--accent)}
+  .rank-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 8px;font-size:13px;color:var(--faint);font-family:"JetBrains Mono",monospace}
+  .rank-body p{margin:0;color:var(--muted);font-size:15.5px}
+
+  .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:20px;color:#fff}
+  .t-gov{background:var(--gov)} .t-privacy{background:var(--privacy)} .t-agi{background:var(--agi)}
+  .t-reg{background:var(--reg)} .t-labs{background:var(--labs)} .t-china{background:var(--china)}
+  .score{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:12px;color:var(--ink);background:var(--accent-soft);border:1px solid #f0d8cf;padding:2px 8px;border-radius:6px}
+
+  /* Topic coverage cards */
+  .topic{margin:20px 0}
+  .topic-head{display:flex;align-items:center;gap:10px;margin:0 0 4px}
+  .topic-head h3{font-family:"Fraunces",serif;font-size:22px;font-weight:600;margin:0}
+  .article{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:14px 0}
+  .article h4{font-size:17px;margin:0 0 6px;line-height:1.3;font-weight:600}
+  .article h4 a{color:var(--ink)}
+  .article-src{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--faint);margin:0 0 10px}
+  .article ul{margin:0;padding-left:20px}
+  .article li{margin:4px 0;color:var(--muted);font-size:15px}
+  .article .foot{margin-top:10px;font-size:13px;color:var(--faint);font-style:italic}
+
+  .takeaway{margin-top:14px;font-size:15px;color:var(--ink);background:#f4f6f3;border-left:3px solid var(--privacy);padding:10px 14px;border-radius:0 6px 6px 0}
+  .takeaway b{font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--privacy)}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);background:var(--card)}
+  .footer-inner{max-width:var(--max);margin:0 auto;padding:26px 22px 40px;font-size:13.5px;color:var(--faint)}
+  .footer-inner p{margin:6px 0}
+  .footer-inner code{font-family:"JetBrains Mono",monospace;font-size:12px;background:#f0f1f3;padding:1px 5px;border-radius:4px}
+
+  @media(max-width:600px){
+    body{font-size:16px}
+    .rank{gap:12px}
+    .rank-num{font-size:26px;min-width:32px}
+    h1.title{margin-top:18px}
+  }
+</style>
+</head>
+<body>
+<header class="masthead"><div class="masthead-inner"><div class="brand">◆&nbsp;OT&nbsp;Labs <b>Daily Brief</b></div><div class="issue-meta">Issue · 2026-07-28<br>AI · Policy · Frontier Intelligence</div></div></header>
+<div class="wrap">
+<h1 class="title">Open AI becomes a geopolitical control surface</h1>
+<p class="dek">Twelve consequential developments across six standing beats, stack-ranked for the July 25–28 decision window.</p>
+<div class="lede"><h2>Executive summary</h2><p><b>Europe’s AI rulebook moved from legislative text to operating reality.</b> The AI Omnibus entered into force today, extending selected high-risk timelines and widening sandbox access while preserving the August 2 transparency milestone. The signal is sequencing, not deregulation: inventories, labels, provenance and accountable ownership must ship before the more complex conformity regime.</p><p><b>Frontier competition is becoming a contest over who sets the access model.</b> Lab leaders are calling for independent evaluations before AGI, OpenAI is tying frontier capacity to national science, and China is pairing cheap open models with an inclusion-led governance pitch. Leaders should connect compliance evidence, evaluation security and model-supply-chain strategy now.</p></div>
+<div class="section-label">Stack rank · top 10 stories</div><h2 class="section">What matters most today</h2>
+<div class="rank"><div class="rank-num">1</div><div class="rank-body"><div class="rank-meta"><span class="tag t-labs">Frontier Labs</span><span class="score">9 / 10</span></div><h3><a href="https://www.axios.com/2026/07/27/nvidia-anthropic-openai-open-weight-debate">Industry coalition turns open weights into a strategic fault line</a></h3><p>Nvidia and a broad coalition frame open models as infrastructure, exposing a widening split with frontier labs over security, economics and control.</p></div></div>
+<div class="rank"><div class="rank-num">2</div><div class="rank-body"><div class="rank-meta"><span class="tag t-china">AI in China</span><span class="score">9 / 10</span></div><h3><a href="https://www.bloomberg.com/news/articles/2026-07-27/china-state-media-says-support-for-open-ai-models-has-limits">China signals that frontier openness will have limits</a></h3><p>State-linked commentary describes tiered access for high-risk capabilities, sharpening the distinction between open ecosystems and uncontrolled proliferation.</p></div></div>
+<div class="rank"><div class="rank-num">3</div><div class="rank-body"><div class="rank-meta"><span class="tag t-agi">AGI</span><span class="score">8 / 10</span></div><h3><a href="https://www.techradar.com/ai-platforms-assistants/google-deepminds-demis-hassabis-calls-for-urgent-action-during-precious-window-before-agi-arrives-and-its-all-starting-to-feel-a-bit-skynet">Hassabis urges action in the window before AGI</a></h3><p>DeepMind’s CEO argued for independent benchmarks, shared standards and stronger preparation as dangerous capabilities advance.</p></div></div>
+<div class="rank"><div class="rank-num">4</div><div class="rank-body"><div class="rank-meta"><span class="tag t-china">AI in China</span><span class="score">8 / 10</span></div><h3><a href="https://www.bloomberg.com/news/articles/2026-07-24/china-s-ai-for-all-push-defies-us-containment-playbook">China’s AI for all push tests containment</a></h3><p>Cheap, increasingly competitive Chinese models are turning openness and distribution into strategic leverage.</p></div></div>
+<div class="rank"><div class="rank-num">5</div><div class="rank-body"><div class="rank-meta"><span class="tag t-labs">Frontier Labs</span><span class="score">7 / 10</span></div><h3><a href="https://openai.com/index/advancing-the-next-era-of-national-science/">OpenAI makes frontier AI a national-science platform</a></h3><p>OpenAI proposed linking models with national labs, universities, supercomputers and scientific facilities.</p></div></div>
+<div class="rank"><div class="rank-num">6</div><div class="rank-body"><div class="rank-meta"><span class="tag t-privacy">Data Privacy</span><span class="score">7 / 10</span></div><h3><a href="https://www.edpb.europa.eu/news_en">EDPB joins privacy and competition policy</a></h3><p>A new stakeholder process signals that data access, market power and privacy safeguards will increasingly be treated together.</p></div></div>
+<div class="rank"><div class="rank-num">7</div><div class="rank-body"><div class="rank-meta"><span class="tag t-gov">AI Governance</span><span class="score">7 / 10</span></div><h3><a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/07/government-of-canada-launches-public-consultation-on-ai-transparency.html">Canada opens AI-transparency consultation</a></h3><p>Canada is connecting disclosure expectations with its national AI, privacy and child-safety agenda.</p></div></div>
+<div class="rank"><div class="rank-num">8</div><div class="rank-body"><div class="rank-meta"><span class="tag t-reg">Regulatory</span><span class="score">7 / 10</span></div><h3><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline">Article 50 enters the final countdown</a></h3><p>Providers and deployers have days to finalize machine-interaction disclosures and labeling for covered synthetic content.</p></div></div>
+<div class="rank"><div class="rank-num">9</div><div class="rank-body"><div class="rank-meta"><span class="tag t-privacy">Data Privacy</span><span class="score">6 / 10</span></div><h3><a href="https://www.gov.uk/government/calls-for-evidence/data-regulation-in-the-age-of-ai-and-other-data-intensive-technologies">UK reopens the data bargain for AI systems</a></h3><p>A live call asks where law, technology and governance can enable reuse while containing privacy harms.</p></div></div>
+<div class="rank"><div class="rank-num">10</div><div class="rank-body"><div class="rank-meta"><span class="tag t-china">AI in China</span><span class="score">6 / 10</span></div><h3><a href="https://www.fmprc.gov.cn/eng/xw/zyxw/202607/t20260717_11984715.html">China couples open models with a governance offer</a></h3><p>Beijing frames broad access, capacity building and multilateral rules as an alternative frontier order.</p></div></div>
+<div class="section-label">Full coverage · all 12 stories with 3-bullet summaries</div><h2 class="section">The beats in detail</h2>
+<div class="topic"><div class="topic-head"><span class="tag t-privacy">Data Privacy</span></div><div class="article"><h4><a href="https://www.edpb.europa.eu/news_en">EDPB links privacy and competition</a></h4><ul><li>The Board announced a stakeholder event on forthcoming cross-regulatory guidance.</li><li>AI markets make control of training data both a privacy and market-power issue.</li><li>Teams should map data-advantage claims to GDPR necessity and user-rights evidence.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-privacy">Data Privacy</span></div><div class="article"><h4><a href="https://www.gov.uk/government/calls-for-evidence/data-regulation-in-the-age-of-ai-and-other-data-intensive-technologies">UK seeks evidence on AI-era data rules</a></h4><ul><li>The review asks how to unlock data use and reuse while managing harm.</li><li>It follows the Data (Use and Access) Act 2026 changes.</li><li>AI builders can shape rules around access, accountability and privacy-enhancing technology.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-gov">AI Governance</span></div><div class="article"><h4><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AL_202601744">EU publishes the final AI Omnibus</a></h4><ul><li>The regulation amends the AI Act and related product laws.</li><li>It extends defined AI Office oversight and creates an EU-level sandbox path.</li><li>Applicability maps should use the final text, not political-agreement summaries.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-gov">AI Governance</span></div><div class="article"><h4><a href="https://www.canada.ca/en/innovation-science-economic-development/news/2026/07/government-of-canada-launches-public-consultation-on-ai-transparency.html">Canada consults on AI transparency</a></h4><ul><li>Canada asks how transparency can strengthen trust and informed use.</li><li>The work sits beside its AI for All strategy and proposed privacy laws.</li><li>Disclosure controls are becoming reusable product primitives across jurisdictions.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-agi">AGI</span></div><div class="article"><h4><a href="https://www.techradar.com/ai-platforms-assistants/google-deepminds-demis-hassabis-calls-for-urgent-action-during-precious-window-before-agi-arrives-and-its-all-starting-to-feel-a-bit-skynet">DeepMind CEO urges action before AGI</a></h4><ul><li>Hassabis said the preparation window may be only a few years.</li><li>He highlighted cyber risk and possible biological and autonomy risks.</li><li>Independent benchmarks would reduce lab incentives and benchmark gaming.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-agi">AGI</span></div><div class="article"><h4><a href="https://agi-conference.org/">AGI-26 opens the capability debate</a></h4><ul><li>The annual conference begins today across architectures and cognition.</li><li>It follows stronger public claims about short AGI timelines.</li><li>The gap between research definitions and policy thresholds remains unresolved.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-reg">Regulatory Compliance</span></div><div class="article"><h4><a href="https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force">AI Omnibus enters into force</a></h4><ul><li>Selected timelines move and sandbox eligibility expands.</li><li>Oversight is aligned while core safeguards remain.</li><li>Owners should document today which deadlines moved and which did not.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-reg">Regulatory Compliance</span></div><div class="article"><h4><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline">August 2 transparency rules remain imminent</a></h4><ul><li>Article 50 begins applying next week.</li><li>Covered interactions and synthetic content require disclosure or labeling.</li><li>The minimum kit is an inventory, disclosure patterns, ownership and evidence.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-labs">Frontier Labs</span></div><div class="article"><h4><a href="https://openai.com/index/advancing-the-next-era-of-national-science/">OpenAI proposes infrastructure for national science</a></h4><ul><li>OpenAI wants to connect models with national labs and universities.</li><li>Its thesis is durable institutional capacity, not one model release.</li><li>Science partnerships are becoming a strategic frontier-lab channel.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-labs">Frontier Labs</span></div><div class="article"><h4><a href="https://www.anthropic.com/responsible-scaling-policy/roadmap">Anthropic targets weight-bound provenance</a></h4><ul><li>Anthropic plans a prototype for signing outputs against model weights.</li><li>The roadmap also covers weight security, training integrity and misuse.</li><li>Provenance could connect disclosure, incident response and assurance.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-china">AI in China</span></div><div class="article"><h4><a href="https://www.bloomberg.com/news/articles/2026-07-24/china-s-ai-for-all-push-defies-us-containment-playbook">China’s distribution tests export controls</a></h4><ul><li>Chinese models are gaining competitiveness despite chip restrictions.</li><li>Low prices and availability turn adoption into ecosystem leverage.</li><li>Access restrictions may be mismatched to open distribution.</li></ul></div></div>
+<div class="topic"><div class="topic-head"><span class="tag t-china">AI in China</span></div><div class="article"><h4><a href="https://www.fmprc.gov.cn/eng/xw/zyxw/202607/t20260717_11984715.html">Beijing packages open AI as diplomacy</a></h4><ul><li>The WAIC message stressed access and developing-economy participation.</li><li>Distribution becomes an alternative governance doctrine, not only pricing.</li><li>Closed frontier access now competes with a politically resonant open ecosystem.</li></ul></div></div>
+</div><footer><div class="footer-inner"><p><b>OT Labs Daily Brief</b> · Research window approximately July 23–27, 2026; older context is explicitly dated where weekend primary-source activity was sparse.</p></div></footer></body></html>
