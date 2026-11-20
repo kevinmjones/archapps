@@ -34,13 +34,12 @@ function cleanString(value) {
 export function buildAgyModels() {
   return [
     { id: "auto", label: "Current Antigravity default" },
-    { id: "Gemini 3.6 Flash (Low)", label: "Gemini 3.6 Flash (Low)" },
-    { id: "Gemini 3.6 Flash (Medium)", label: "Gemini 3.6 Flash (Medium)" },
-    { id: "Gemini 3.6 Flash (High)", label: "Gemini 3.6 Flash (High)" },
-    { id: "Gemini 3.1 Pro (Low)", label: "Gemini 3.1 Pro (Low)" },
-    { id: "Gemini 3.1 Pro (High)", label: "Gemini 3.1 Pro (High)" },
-    { id: "Claude Sonnet 4.6 (Thinking)", label: "Claude Sonnet 4.6 (Thinking)" },
-    { id: "Claude Opus 4.6 (Thinking)", label: "Claude Opus 4.6 (Thinking)" },
+    { id: "Claude Opus 5.5 (Low)", label: "Claude Opus 5.5 (Low)" },
+    { id: "Claude Opus 5.5 (Medium)", label: "Claude Opus 5.5 (Medium)" },
+    { id: "Claude Opus 5.5 (High)", label: "Claude Opus 5.5 (High)" },
+    { id: "Claude Sonnet 5.5 (Low)", label: "Claude Sonnet 5.5 (Low)" },
+    { id: "Claude Sonnet 5.5 (Medium)", label: "Claude Sonnet 5.5 (Medium)" },
+    { id: "Claude Sonnet 5.5 (High)", label: "Claude Sonnet 5.5 (High)" },
     { id: "GPT-OSS 120B (Medium)", label: "GPT-OSS 120B (Medium)" },
   ];
 }
