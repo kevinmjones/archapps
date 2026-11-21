@@ -1,6 +1,18 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { buildAgyModels, listAgyModels, parseAgyModels } from "./index.js";
+import { buildAgyModels, buildArgs, listAgyModels, parseAgyModels } from "./index.js";
+
+test("permission bypass is least-privilege by default and supports an explicit override", () => {
+  assert.equal(buildArgs({}, "prompt").includes("--dangerously-skip-permissions"), false);
+  assert.equal(
+    buildArgs({ dangerouslySkipPermissions: false }, "prompt").includes("--dangerously-skip-permissions"),
+    false,
+  );
+  assert.equal(
+    buildArgs({ dangerouslySkipPermissions: true }, "prompt").includes("--dangerously-skip-permissions"),
+    true,
+  );
+});
 
 test("static fallback excludes legacy ids", () => {
   const ids = buildAgyModels().map(({ id }) => id);
