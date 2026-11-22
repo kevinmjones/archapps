@@ -1,12 +1,23 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { buildAgyModels, listAgyModels, parseAgyModels } from "./index.js";
+import { buildAgyModels, buildArgs, listAgyModels, parseAgyModels } from "./index.js";
 
-test("static fallback excludes legacy ids and matches current 3.6 labels", () => {
+test("permission bypass is least-privilege by default and supports an explicit override", () => {
+  assert.equal(buildArgs({}, "prompt").includes("--dangerously-skip-permissions"), false);
+  assert.equal(
+    buildArgs({ dangerouslySkipPermissions: false }, "prompt").includes("--dangerously-skip-permissions"),
+    false,
+  );
+  assert.equal(
+    buildArgs({ dangerouslySkipPermissions: true }, "prompt").includes("--dangerously-skip-permissions"),
+    true,
+  );
+});
+
+test("static fallback excludes legacy ids", () => {
   const ids = buildAgyModels().map(({ id }) => id);
   assert.equal(ids.includes("gemini-3.5-flash"), false);
   assert.equal(ids.some((id) => id.includes("Gemini 3.5 Flash")), false);
-  assert.equal(ids.filter((id) => id.includes("Gemini 3.6 Flash")).length, 3);
 });
 
 test("parser converts the authoritative CLI output to adapter models", () => {
@@ -17,8 +28,15 @@ test("parser converts the authoritative CLI output to adapter models", () => {
   assert.throws(() => parseAgyModels("\n"), /empty model catalog/);
 });
 
-test("live discovery excludes the rejected legacy model", async () => {
-  const ids = (await listAgyModels()).map(({ id }) => id);
-  assert.equal(ids.includes("gemini-3.5-flash"), false);
-  assert.equal(ids.includes("Gemini 3.6 Flash (High)"), true);
+test("every declared model id is supported by the authoritative runtime", async () => {
+  const runtimeIds = new Set((await listAgyModels()).map(({ id }) => id));
+  const declaredIds = buildAgyModels()
+    .map(({ id }) => id)
+    .filter((id) => id !== "auto");
+
+  assert.deepEqual(
+    declaredIds.filter((id) => !runtimeIds.has(id)),
+    [],
+    "adapter declares model ids absent from `agy models`",
+  );
 });

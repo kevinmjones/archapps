@@ -34,13 +34,12 @@ function cleanString(value) {
 export function buildAgyModels() {
   return [
     { id: "auto", label: "Current Antigravity default" },
-    { id: "Gemini 3.6 Flash (Low)", label: "Gemini 3.6 Flash (Low)" },
-    { id: "Gemini 3.6 Flash (Medium)", label: "Gemini 3.6 Flash (Medium)" },
-    { id: "Gemini 3.6 Flash (High)", label: "Gemini 3.6 Flash (High)" },
-    { id: "Gemini 3.1 Pro (Low)", label: "Gemini 3.1 Pro (Low)" },
-    { id: "Gemini 3.1 Pro (High)", label: "Gemini 3.1 Pro (High)" },
-    { id: "Claude Sonnet 4.6 (Thinking)", label: "Claude Sonnet 4.6 (Thinking)" },
-    { id: "Claude Opus 4.6 (Thinking)", label: "Claude Opus 4.6 (Thinking)" },
+    { id: "Claude Opus 5.5 (Low)", label: "Claude Opus 5.5 (Low)" },
+    { id: "Claude Opus 5.5 (Medium)", label: "Claude Opus 5.5 (Medium)" },
+    { id: "Claude Opus 5.5 (High)", label: "Claude Opus 5.5 (High)" },
+    { id: "Claude Sonnet 5.5 (Low)", label: "Claude Sonnet 5.5 (Low)" },
+    { id: "Claude Sonnet 5.5 (Medium)", label: "Claude Sonnet 5.5 (Medium)" },
+    { id: "Claude Sonnet 5.5 (High)", label: "Claude Sonnet 5.5 (High)" },
     { id: "GPT-OSS 120B (Medium)", label: "GPT-OSS 120B (Medium)" },
   ];
 }
@@ -199,13 +198,13 @@ function buildPrompt(agent, runId, config, context, instructionsPrefix, env) {
   ]);
 }
 
-function buildArgs(config, prompt) {
+export function buildArgs(config, prompt) {
   const args = [];
   const model = asString(config.model, "auto").trim();
   const printTimeout = asString(config.printTimeout, DEFAULT_PRINT_TIMEOUT).trim() || DEFAULT_PRINT_TIMEOUT;
   if (model && model !== "auto") args.push("--model", model);
   if (asBoolean(config.sandbox, false)) args.push("--sandbox");
-  if (asBoolean(config.dangerouslySkipPermissions, true)) args.push("--dangerously-skip-permissions");
+  if (asBoolean(config.dangerouslySkipPermissions, false)) args.push("--dangerously-skip-permissions");
   const project = asString(config.project, "").trim();
   if (project) args.push("--project", project);
   if (asBoolean(config.newProject, false)) args.push("--new-project");
@@ -242,7 +241,7 @@ Core fields:
 - command (string, optional): defaults to \`agy\`.
 - model (string, optional): Antigravity model id/label. Leave \`auto\` to use the CLI default/current selection.
 - printTimeout (string, optional): Antigravity print-mode timeout. Defaults to \`${DEFAULT_PRINT_TIMEOUT}\`.
-- dangerouslySkipPermissions (boolean, optional): pass \`--dangerously-skip-permissions\`. Defaults to true for unattended Paperclip runs.
+- dangerouslySkipPermissions (boolean, optional): pass \`--dangerously-skip-permissions\`. Defaults to false; enable only as an explicit, reviewed exception when the run cannot operate within Agy's normal permission boundary.
 - sandbox (boolean, optional): pass \`--sandbox\`.
 - extraArgs / args (string[] | string, optional): additional CLI args.
 - env (object, optional): KEY=VALUE environment variables.
@@ -263,7 +262,7 @@ Notes:
           { key: "cwd", label: "Working directory", type: "text", hint: "Optional fallback; Paperclip workspace cwd wins when present." },
           { key: "printTimeout", label: "Print timeout", type: "text", default: DEFAULT_PRINT_TIMEOUT },
           { key: "timeoutSec", label: "Process timeout seconds", type: "number", default: 0 },
-          { key: "dangerouslySkipPermissions", label: "Skip permission prompts", type: "toggle", default: true },
+          { key: "dangerouslySkipPermissions", label: "Skip permission prompts", type: "toggle", default: false },
           { key: "sandbox", label: "Use Antigravity sandbox", type: "toggle", default: false },
           { key: "extraArgs", label: "Extra args", type: "textarea", hint: "JSON/string array or newline-separated args, depending on Paperclip form handling." },
         ],
